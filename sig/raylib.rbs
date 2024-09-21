@@ -1,4 +1,12 @@
 module Raylib
   VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+  def InitWindow        : (width: Integer, height: Integer, name:  String) -> void
+  def CloseWindow       : () -> void
+  def WindowShouldClose : () -> bool
+  class Rectangle 
+    attr_accessor x      : Float 
+    attr_accessor y      : Float
+    attr_accessor width  : Float
+    attr_accessor height : Float
+  end
 end
