@@ -3,10 +3,30 @@ module Raylib
   def InitWindow        : (width: Integer, height: Integer, name:  String) -> void
   def CloseWindow       : () -> void
   def WindowShouldClose : () -> bool
+  def SetTraceLogLevel  : (flags: Integer) -> void
+  def SetWindowState    : (flags: Integer) -> void
   class Rectangle 
     attr_accessor x      : Float 
     attr_accessor y      : Float
     attr_accessor width  : Float
     attr_accessor height : Float
+  end
+  module ConfigFlags
+      VSYNC_HINT               : Integer
+      FULLSCREEN_MODE          : Integer
+      WINDOW_RESIZABLE         : Integer
+      WINDOW_UNDECORATED       : Integer
+      WINDOW_HIDDEN            : Integer
+      WINDOW_MINIMIZED         : Integer
+      WINDOW_MAXIMIZED         : Integer
+      WINDOW_UNFOCUSED         : Integer
+      WINDOW_TOPMOST           : Integer
+      WINDOW_ALWAYS_RUN        : Integer
+      WINDOW_TRANSPARENT       : Integer
+      WINDOW_HIGHDPI           : Integer
+      WINDOW_MOUSE_PASSTHROUGH : Integer
+      BORDERLESS_WINDOWED_MODE : Integer
+      MSAA_4X_HINT             : Integer
+      INTERLACED_HINT          : Integer
   end
 end
