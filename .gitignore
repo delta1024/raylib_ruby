@@ -7,3 +7,4 @@
 /spec/reports/
 /tmp/
 lib/raylib/structs/todo/
+Gemfile.lock
