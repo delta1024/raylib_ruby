@@ -1,5 +1,7 @@
 module Raylib
   class Rectangle < FFI::Struct
+    extend Accessable
+    extend Creatable
     layout :x,      :float,
       :y,      :float,
       :width,  :float,

@@ -1,5 +1,6 @@
 module Raylib
   class Texture < FFI::Struct
+    extend Accessable
     layout :id, :uint,
       :width, :int,
       :height, :int,
@@ -8,6 +9,7 @@ module Raylib
     make_accessor :id, :width, :height, :mipmaps, :format
   end
   class RenderTexture < FFI::Struct
+    extend Accessable
     layout :id, :uint,
       :texture, Texture,
       :depth, Texture

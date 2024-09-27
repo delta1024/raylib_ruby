@@ -1,5 +1,7 @@
 module Raylib
   class Color < FFI::Struct
+    extend Accessable
+    extend Creatable
     layout :r, :uchar,
       :g, :uchar,
       :b, :uchar,

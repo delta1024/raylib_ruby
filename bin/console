@@ -7,5 +7,19 @@ require "raylib"
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 Raylib.set_trace_log_level :log_none
+def draw
+  Raylib.begin_drawing
+  yield
+ensure
+  Raylib.end_drawing
+end
+def run
+  Raylib.init_window 800, 450, "rayruby"
+  until Raylib.window_should_close
+    yield
+  end
+ensure
+  Raylib.close_window
+end
 require "irb"
 IRB.start(__FILE__)

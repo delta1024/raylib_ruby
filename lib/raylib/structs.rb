@@ -1,6 +1,6 @@
 module Raylib
-  class FFI::Struct
-    def self.make_accessor(*attrs)
+  module Accessable
+    def make_accessor(*attrs)
       not_provided = Object.new
       attrs.each do |attr|
         define_method "#{attr}" do |value = not_provided|
@@ -15,10 +15,9 @@ module Raylib
         end
       end
     end
-    def self.create(&block)
-      # self.new.tap do |t|
-      #   t.instance_eval(&block)
-      # end
+  end
+  module Creatable
+    def create(&block)
       obj = self.new
       obj.instance_eval(&block)
       obj

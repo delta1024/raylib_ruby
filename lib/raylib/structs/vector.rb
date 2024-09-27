@@ -1,5 +1,7 @@
 module Raylib
   class Vector2 < FFI::Struct
+    extend Accessable
+    extend Creatable
     layout :x, :float,
       :y, :float
     make_accessor :x, :y
@@ -18,6 +20,8 @@ module Raylib
     end
   end
   class Vector3 < FFI::Struct
+    extend Accessable
+    extend Creatable
     layout :x, :float,
       :y, :float,
       :z, :float
@@ -38,6 +42,8 @@ module Raylib
     end
   end
   class Vector4 < FFI::Struct
+    extend Accessable
+    extend Creatable
     layout :x, :float,
       :y, :float,
       :z, :float,
