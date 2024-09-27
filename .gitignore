@@ -7,4 +7,5 @@
 /spec/reports/
 /tmp/
 lib/raylib/structs/todo/
+lib/raylib/todo/
 Gemfile.lock

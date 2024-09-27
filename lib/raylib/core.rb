@@ -1,14 +1,14 @@
 module Raylib
   raylib_function :init_window, [:int, :int, :string]
   raylib_void_functions :close_window, :begin_drawing, :end_drawing, 
-    :toggle_fullscreen, :toggle_boarderless_windowed, :maximize_window, 
+    :toggle_fullscreen, :toggle_borderless_windowed, :maximize_window, 
     :minimize_window, :restore_window
   raylib_bool_functions :window_should_close, :is_window_ready, 
     :is_window_fullscreen, :is_window_hidden, :is_window_minimized, 
     :is_window_maximized, :is_window_focused, :is_window_resized
   raylib_function :set_window_state,    [ConfigFlags::Flags]
   raylib_function :clear_window_state,  [ConfigFlags::Flags]
-  raylib_function :is_window_state,     [ConfigFlags::Flasg]
+  raylib_function :is_window_state,     [ConfigFlags::Flags]
   raylib_function :set_trace_log_level, [TraceLogLevel]
   raylib_function :clear_background,    [Color.by_value]
 end

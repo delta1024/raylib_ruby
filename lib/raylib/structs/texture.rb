@@ -9,6 +9,7 @@ module Raylib
       :format, :int
     make_accessor :id, :width, :height, :mipmaps, :format
   end
+  Texture2D = Texture
   class RenderTexture < FFI::Struct
     extend Accessable
     extend Creatable

@@ -25,4 +25,8 @@ require_relative "raylib/structs"
 require_relative "raylib/colors"
 require_relative "raylib/core"
 require_relative "raylib/shapes"
+require_relative "raylib/textures"
+# require_relative "raylib/text"
+# require_relative "raylib/models"
+# require_relative "raylib/audio"
 
