@@ -5,9 +5,19 @@ require_relative "raylib/version"
 module Raylib
   extend FFI::Library
   ffi_lib 'raylib'
-  def self.raylib_function(name, args, ret)
+  def self.raylib_function(name, args, ret=:void)
     fn_name = name.to_s.split('_').map {|s| s.capitalize}.join('').to_sym
     attach_function name, fn_name, args, ret
+  end
+  def self.raylib_void_functions(*syms)
+    syms.each do |s|
+      raylib_function s, []
+    end
+  end
+  def self.raylib_bool_functions(*syms)
+    syms.each do |s|
+      raylib_function s, [], :bool
+    end
   end
 end
 require_relative "raylib/enums"

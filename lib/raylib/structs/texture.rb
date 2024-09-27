@@ -1,6 +1,7 @@
 module Raylib
   class Texture < FFI::Struct
     extend Accessable
+    extend Creatable
     layout :id, :uint,
       :width, :int,
       :height, :int,
@@ -10,6 +11,7 @@ module Raylib
   end
   class RenderTexture < FFI::Struct
     extend Accessable
+    extend Creatable
     layout :id, :uint,
       :texture, Texture,
       :depth, Texture

@@ -1,6 +1,7 @@
 module Raylib
   class Image < FFI::Struct
     extend Accessable
+    extend Creatable
     layout :data, :pointer,
       :width, :int,
       :height, :int,
