@@ -1,7 +1,10 @@
 module Raylib
-  raylib_function :draw_rectangle,     [:int, :int, :int, :int, Color.by_value]
-  raylib_function :draw_rectangle_rec, [Rectangle.by_value, Color.by_value]
-  raylib_function :draw_rectangle_pro, [Rectangle.by_value, Vector2.by_value, :float, Color.by_value]
+  raylib_function :draw_rectangle,      [:int, :int, :int, :int, Color.by_value]
+  raylib_function :draw_rectangle_rec,  [Rectangle.by_value, Color.by_value]
+  raylib_function :draw_rectangle_pro,  [Rectangle.by_value, Vector2.by_value, :float, Color.by_value]
+  raylib_function :draw_triangle,       [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
+  raylib_function :draw_circle_v,       [Vector2.by_value, :float, Color.by_value]
+  raylib_function :draw_triangle_lines, [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
 end
 # // NOTE: It can be useful when using basic shapes and one single font,
 # // defining a font char white rectangle would allow drawing everything in a single draw call
@@ -19,7 +22,6 @@ end
 # void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color);      // Draw a piece of a circle
 # void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color); // Draw circle sector outline
 # void DrawCircleGradient(int centerX, int centerY, float radius, Color color1, Color color2);       // Draw a gradient-filled circle
-# void DrawCircleV(Vector2 center, float radius, Color color);                                       // Draw a color-filled circle (Vector version)
 # void DrawCircleLines(int centerX, int centerY, float radius, Color color);                         // Draw circle outline
 # void DrawCircleLinesV(Vector2 center, float radius, Color color);                                  // Draw circle outline (Vector version)
 # void DrawEllipse(int centerX, int centerY, float radiusH, float radiusV, Color color);             // Draw ellipse
@@ -34,8 +36,6 @@ end
 # void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color);                            // Draw rectangle outline with extended parameters
 # void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);              // Draw rectangle with rounded edges
 # void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, float lineThick, Color color); // Draw rectangle with rounded edges outline
-# void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color);                                // Draw a color-filled triangle (vertex in counter-clockwise order!)
-# void DrawTriangleLines(Vector2 v1, Vector2 v2, Vector2 v3, Color color);                           // Draw triangle outline (vertex in counter-clockwise order!)
 # void DrawTriangleFan(Vector2 *points, int pointCount, Color color);                                // Draw a triangle fan defined by points (first vertex is the center)
 # void DrawTriangleStrip(Vector2 *points, int pointCount, Color color);                              // Draw a triangle strip defined by points
 # void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color);               // Draw a regular polygon (Vector version)
