@@ -6,7 +6,7 @@ module Raylib
         define_method "#{attr}" do |value = not_provided|
           if value === not_provided
             send("[]", attr)
-          elsif
+          else
             send("[]=", attr, value)
           end
         end

@@ -1,16 +1,31 @@
 module Raylib
   raylib_function :init_window, [:int, :int, :string]
-  raylib_void_functions :close_window, :begin_drawing, :end_drawing, 
-    :toggle_fullscreen, :toggle_borderless_windowed, :maximize_window, 
-    :minimize_window, :restore_window
-  raylib_bool_functions :window_should_close, :is_window_ready, 
-    :is_window_fullscreen, :is_window_hidden, :is_window_minimized, 
-    :is_window_maximized, :is_window_focused, :is_window_resized
-  raylib_function :set_window_state,    [ConfigFlags::Flags]
-  raylib_function :clear_window_state,  [ConfigFlags::Flags]
-  raylib_function :is_window_state,     [ConfigFlags::Flags]
-  raylib_function :set_trace_log_level, [TraceLogLevel]
-  raylib_function :clear_background,    [Color.by_value]
+
+  raylib_void_functions :close_window,               :begin_drawing, 
+                        :end_drawing,                :toggle_fullscreen, 
+                        :toggle_borderless_windowed, :maximize_window, 
+                        :minimize_window,            :restore_window, 
+                        :end_texture_mode
+
+  raylib_bool_functions :window_should_close,  :is_window_ready, 
+                        :is_window_fullscreen, :is_window_hidden, 
+                        :is_window_minimized,  :is_window_maximized, 
+                        :is_window_focused,    :is_window_resized
+
+  raylib_function :set_window_state,      [ConfigFlags::Flags]
+  raylib_function :clear_window_state,    [ConfigFlags::Flags]
+  raylib_function :is_window_state,       [ConfigFlags::Flags], :bool
+  raylib_function :set_trace_log_level,   [TraceLogLevel]
+  raylib_function :clear_background,      [Color.by_value]
+  raylib_function :begin_texture_mode,    [RenderTexture2D.by_value]
+  raylib_function :is_key_pressed,        [KeyboardKeys::Keys], :bool
+  raylib_function :is_key_pressed_repeat, [KeyboardKeys::Keys], :bool
+  raylib_function :is_key_down,           [KeyboardKeys::Keys], :bool
+  raylib_function :is_key_released,       [KeyboardKeys::Keys], :bool
+  raylib_function :is_key_up,             [KeyboardKeys::Keys], :bool
+  raylib_function :get_key_pressed,       [],                   KeyboardKeys::Keys
+  raylib_function :get_char_pressed,      [],                   :char
+  # raylib_function :set_exit_key,          [KeyboardKeys::Keys]
 end
 #     void SetWindowIcon(Image image);                            // Set icon for window (single image, RGBA 32bit, only PLATFORM_DESKTOP)
 #     void SetWindowIcons(Image *images, int count);              // Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
@@ -56,8 +71,6 @@ end
 #     void EndMode2D(void);                                       // Ends 2D mode with custom camera
 #     void BeginMode3D(Camera3D camera);                          // Begin 3D mode with custom camera (3D)
 #     void EndMode3D(void);                                       // Ends 3D mode and returns to default 2D orthographic mode
-#     void BeginTextureMode(RenderTexture2D target);              // Begin drawing to render texture
-#     void EndTextureMode(void);                                  // Ends drawing to render texture
 #     void BeginShaderMode(Shader shader);                        // Begin custom shader drawing
 #     void EndShaderMode(void);                                   // End custom shader drawing (use default shader)
 #     void BeginBlendMode(int mode);                              // Begin blending mode (alpha, additive, multiplied, subtract, custom)
@@ -186,15 +199,6 @@ end
 #     // Input Handling Functions (Module: core)
 #     //------------------------------------------------------------------------------------
 #
-#     // Input-related functions: keyboard
-#     bool IsKeyPressed(int key);                             // Check if a key has been pressed once
-#     bool IsKeyPressedRepeat(int key);                       // Check if a key has been pressed again (Only PLATFORM_DESKTOP)
-#     bool IsKeyDown(int key);                                // Check if a key is being pressed
-#     bool IsKeyReleased(int key);                            // Check if a key has been released once
-#     bool IsKeyUp(int key);                                  // Check if a key is NOT being pressed
-#     int GetKeyPressed(void);                                // Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
-#     int GetCharPressed(void);                               // Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
-#     void SetExitKey(int key);                               // Set a custom key to exit program (default is ESC)
 #
 #     // Input-related functions: gamepads
 #     bool IsGamepadAvailable(int gamepad);                   // Check if a gamepad is available

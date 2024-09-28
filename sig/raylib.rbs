@@ -1,16 +1,5 @@
 module Raylib
   VERSION: String
-  def InitWindow        : (width: Integer, height: Integer, name:  String) -> void
-  def CloseWindow       : () -> void
-  def WindowShouldClose : () -> bool
-  def SetTraceLogLevel  : (flags: Integer) -> void
-  def SetWindowState    : (flags: Integer) -> void
-  class Rectangle 
-    attr_accessor x      : Float 
-    attr_accessor y      : Float
-    attr_accessor width  : Float
-    attr_accessor height : Float
-  end
   module ConfigFlags
       VSYNC_HINT               : Integer
       FULLSCREEN_MODE          : Integer

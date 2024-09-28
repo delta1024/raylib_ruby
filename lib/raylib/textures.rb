@@ -1,18 +1,25 @@
 # NOTE: These functions do not require GPU access
 
 module Raylib
-  raylib_function :load_image, [:string],                         Image.by_value
-  raylib_function :load_image_raw, [:string, :int, :int, :int, :int], Image.by_value
-  raylib_function :load_image_svg, [:string, :int, :int],             Image.by_value
-  raylib_function :load_image_anim, [:string, :pointer], Image.by_value
-  raylib_function :load_image_from_memory, [:string, :pointer, :int], Image.by_value
-  raylib_function :load_image_from_texture, [Texture2D.by_value], Image.by_value
-  raylib_function :load_image_from_screen, [], Image.by_value
-  raylib_function :is_image_ready, [Image.by_value], :bool
-  raylib_function :unload_image, [Image.by_value]
-  raylib_function :export_image, [Image.by_value, :string], :bool
-  raylib_function :export_image_to_memory, [Image.by_value, :string, :pointer], :uchar
-  raylib_function :export_image_as_code, [Image.by_value, :string], :bool
+  raylib_function :load_image,              [:string],                           Image.by_value
+  raylib_function :load_image_raw,          [:string, :int, :int, :int, :int],   Image.by_value
+  raylib_function :load_image_svg,          [:string, :int, :int],               Image.by_value
+  raylib_function :load_image_anim,         [:string, :pointer],                 Image.by_value
+  raylib_function :load_image_from_memory,  [:string, :pointer, :int],           Image.by_value
+  raylib_function :load_image_from_texture, [Texture2D.by_value],                Image.by_value
+  raylib_function :load_image_from_screen,  [],                                  Image.by_value
+  raylib_function :is_image_ready,          [Image.by_value],                    :bool
+  raylib_function :unload_image,            [Image.by_value]
+  raylib_function :export_image,            [Image.by_value, :string],           :bool
+  raylib_function :export_image_to_memory,  [Image.by_value, :string, :pointer], :uchar
+  raylib_function :export_image_as_code,    [Image.by_value, :string],           :bool
+  raylib_function :load_texture,            [:string],                           Texture2D.by_value
+  raylib_function :load_texture_from_image, [Image.by_value],                    Texture2D.by_value
+  raylib_function :load_render_texture,     [:int, :int],                        RenderTexture2D.by_value
+  raylib_function :is_texture_ready,        [Texture2D.by_value],                :bool
+  raylib_function :unload_texture,          [Texture2D.by_value]
+  raylib_function :is_render_texture_ready, [RenderTexture2D.by_value],          :bool
+  raylib_function :unload_render_texture,   [RenderTexture2D.by_value]
 end
  #
  #    // Image generation functions
@@ -83,14 +90,7 @@ end
  #
  #    // Texture loading functions
  #    // NOTE: These functions require GPU access
- #    Texture2D LoadTexture(const char *fileName);                                                       // Load texture from file into GPU memory (VRAM)
- #    Texture2D LoadTextureFromImage(Image image);                                                       // Load texture from image data
  #    TextureCubemap LoadTextureCubemap(Image image, int layout);                                        // Load cubemap from image, multiple image cubemap layouts supported
- #    RenderTexture2D LoadRenderTexture(int width, int height);                                          // Load texture for rendering (framebuffer)
- #    bool IsTextureReady(Texture2D texture);                                                            // Check if a texture is ready
- #    void UnloadTexture(Texture2D texture);                                                             // Unload texture from GPU memory (VRAM)
- #    bool IsRenderTextureReady(RenderTexture2D target);                                                 // Check if a render texture is ready
- #    void UnloadRenderTexture(RenderTexture2D target);                                                  // Unload render texture from GPU memory (VRAM)
  #    void UpdateTexture(Texture2D texture, const void *pixels);                                         // Update GPU texture with new data
  #    void UpdateTextureRec(Texture2D texture, Rectangle rec, const void *pixels);                       // Update GPU texture rectangle with new data
  #

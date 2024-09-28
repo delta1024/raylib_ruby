@@ -18,4 +18,5 @@ module Raylib
       :depth, Texture
     make_accessor :id, :texture, :depth
   end
+  RenderTexture2D = RenderTexture
 end
