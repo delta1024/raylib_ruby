@@ -1,4 +1,0 @@
-module Raylib
-  class Color
-  end
-end

@@ -1,21 +1,3 @@
 module Raylib
   VERSION: String
-  module ConfigFlags
-      VSYNC_HINT               : Integer
-      FULLSCREEN_MODE          : Integer
-      WINDOW_RESIZABLE         : Integer
-      WINDOW_UNDECORATED       : Integer
-      WINDOW_HIDDEN            : Integer
-      WINDOW_MINIMIZED         : Integer
-      WINDOW_MAXIMIZED         : Integer
-      WINDOW_UNFOCUSED         : Integer
-      WINDOW_TOPMOST           : Integer
-      WINDOW_ALWAYS_RUN        : Integer
-      WINDOW_TRANSPARENT       : Integer
-      WINDOW_HIGHDPI           : Integer
-      WINDOW_MOUSE_PASSTHROUGH : Integer
-      BORDERLESS_WINDOWED_MODE : Integer
-      MSAA_4X_HINT             : Integer
-      INTERLACED_HINT          : Integer
-  end
 end

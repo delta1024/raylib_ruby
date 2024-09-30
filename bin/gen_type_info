@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "rbs"
+
+  loader = RBS::EnvironmentLoader.new()
+  loader.add(path: Pathname("lib"))
+  environment = RBS::Environment.from_loader(loader).resolve_type_names
+  raylib = RBS::TypeName.new(name: :Raylib)
+
+  builder = RBS::DefinitionBuilder.new(env: environment)
+  puts builder.build_instance(raylib)
+

@@ -3,12 +3,8 @@ module Raylib
     def make_accessor(*attrs)
       not_provided = Object.new
       attrs.each do |attr|
-        define_method "#{attr}" do |value = not_provided|
-          if value === not_provided
+        define_method "#{attr}" do 
             send("[]", attr)
-          else
-            send("[]=", attr, value)
-          end
         end
         define_method "#{attr}=" do |val|
           send("[]=", attr, val)

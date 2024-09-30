@@ -10,16 +10,15 @@ module Raylib
     def inspect()
       return "<Rectangle x: #{self[:x]} y: #{self[:y]}, width: #{self[:width]}, height: #{self[:height]}>"
     end
-    def self.from (x_, y_ = 0, width_ = 0, height_ = 0)
-      if x_.is_a? Array
-        self.from *x_
-      else
-        self.create do
-          x      x_
-          y      y_
-          width  width_
-          height height_
-        end
+    def self.from (x, y = 0, width = 0, height = 0)
+      if x.is_a? Array
+        x, y, width, height = x
+      end
+      self.create do |r|
+        r.x      = x
+        r.y      = y
+        r.width  = width
+        r.height = height
       end
     end
   end
