@@ -25,6 +25,7 @@ module Raylib
   raylib_function :is_key_up,             [KeyboardKeys::Keys], :bool
   raylib_function :get_key_pressed,       [],                   KeyboardKeys::Keys
   raylib_function :get_char_pressed,      [],                   :char
+  attach_function :set_target_fps, :SetTargetFPS,       [:int], :void
   # raylib_function :set_exit_key,          [KeyboardKeys::Keys]
 end
 #     void SetWindowIcon(Image image);                            // Set icon for window (single image, RGBA 32bit, only PLATFORM_DESKTOP)
@@ -107,7 +108,6 @@ end
 #     Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera); // Get the screen space position for a 2d camera world space position
 #
 #     // Timing-related functions
-#     void SetTargetFPS(int fps);                                 // Set target FPS (maximum)
 #     float GetFrameTime(void);                                   // Get time in seconds for last frame drawn (delta time)
 #     double GetTime(void);                                       // Get elapsed time in seconds since InitWindow()
 #     int GetFPS(void);                                           // Get current FPS
