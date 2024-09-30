@@ -5,6 +5,7 @@ module Raylib
   raylib_function :draw_triangle,       [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
   raylib_function :draw_circle_v,       [Vector2.by_value, :float, Color.by_value]
   raylib_function :draw_triangle_lines, [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
+  raylib_function :draw_circle,         [:int, :int, :float, Color.by_value]
 end
 # // NOTE: It can be useful when using basic shapes and one single font,
 # // defining a font char white rectangle would allow drawing everything in a single draw call
@@ -18,7 +19,6 @@ end
 # void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color);                       // Draw a line (using triangles/quads)
 # void DrawLineStrip(Vector2 *points, int pointCount, Color color);                                  // Draw lines sequence (using gl lines)
 # void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color);                   // Draw line segment cubic-bezier in-out interpolation
-# void DrawCircle(int centerX, int centerY, float radius, Color color);                              // Draw a color-filled circle
 # void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color);      // Draw a piece of a circle
 # void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color); // Draw circle sector outline
 # void DrawCircleGradient(int centerX, int centerY, float radius, Color color1, Color color2);       // Draw a gradient-filled circle
