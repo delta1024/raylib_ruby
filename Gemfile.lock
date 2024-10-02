@@ -10,7 +10,7 @@ GEM
     ffi (1.17.0-x86_64-linux-gnu)
     logger (1.6.1)
     rake (13.2.1)
-    rbs (3.5.3)
+    rbs (3.6.0)
       logger
 
 PLATFORMS

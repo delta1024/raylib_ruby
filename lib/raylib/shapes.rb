@@ -1,11 +1,12 @@
 module Raylib
-  raylib_function :draw_rectangle,      [:int, :int, :int, :int, Color.by_value]
-  raylib_function :draw_rectangle_rec,  [Rectangle.by_value, Color.by_value]
-  raylib_function :draw_rectangle_pro,  [Rectangle.by_value, Vector2.by_value, :float, Color.by_value]
-  raylib_function :draw_triangle,       [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
-  raylib_function :draw_circle_v,       [Vector2.by_value, :float, Color.by_value]
-  raylib_function :draw_triangle_lines, [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
-  raylib_function :draw_circle,         [:int, :int, :float, Color.by_value]
+  raylib_function :draw_rectangle,          [:int, :int, :int, :int, Color.by_value]
+  raylib_function :draw_rectangle_rec,      [Rectangle.by_value, Color.by_value]
+  raylib_function :draw_rectangle_pro,      [Rectangle.by_value, Vector2.by_value, :float, Color.by_value]
+  raylib_function :draw_triangle,           [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
+  raylib_function :draw_circle_v,           [Vector2.by_value, :float, Color.by_value]
+  raylib_function :draw_triangle_lines,     [Vector2.by_value, Vector2.by_value, Vector2.by_value, Color.by_value]
+  raylib_function :draw_circle,             [:int, :int, :float, Color.by_value]
+  raylib_function :check_collision_circles, [Vector2.by_value, :float, Vector2.by_value, :float], :bool
 end
 # // NOTE: It can be useful when using basic shapes and one single font,
 # // defining a font char white rectangle would allow drawing everything in a single draw call
@@ -63,7 +64,6 @@ end
 #
 # // Basic shapes collision detection functions
 # bool CheckCollisionRecs(Rectangle rec1, Rectangle rec2);                                           // Check collision between two rectangles
-# bool CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2);        // Check collision between two circles
 # bool CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec);                         // Check collision between circle and rectangle
 # bool CheckCollisionPointRec(Vector2 point, Rectangle rec);                                         // Check if point is inside rectangle
 # bool CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius);                       // Check if point is inside circle
