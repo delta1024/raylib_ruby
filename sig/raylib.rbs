@@ -1,3 +1,193 @@
 module Raylib
-  VERSION: String
+  extend FFI::Library
+
+  def self.begin_drawing: () -> void
+
+  def self.begin_texture_mode: (RenderTexture2D texture) -> void
+
+  def self.check_collision_circles: (Vector2 center1, Float radius1, Vector2 centor2, Float radius2) -> bool
+
+  def self.clear_background: (Color color) -> void
+
+  def self.clear_window_state: (Integer flags) -> void
+
+  def self.close_window: () -> void
+
+  def self.draw_circle: (Integer center_x, Integer center_y, Float radius, ::Raylib::Color color) -> void
+
+  def self.draw_circle_v: (::Raylib::Vector2 center, Float radius, Color color) -> void
+
+  def self.draw_rectangle: (Integer pos_x, Integer pos_y, Integer width, Integer height, ::Raylib::Color color) -> void
+
+  def self.draw_rectangle_pro: (::Raylib::Rectangle rec, ::Raylib::Vector2 origin, Float rotation, ::Raylib::Color color) -> void
+
+  def self.draw_rectangle_rec: (::Raylib::Rectangle rec, ::Raylib::Color color) -> void
+
+  def self.draw_text: (String text, Integer pos_x, Integer pos_y, Integer font_size, ::Raylib::Color color) -> void
+
+  def self.draw_triangle: (::Raylib::Vector2 v1, ::Raylib::Vector2 v2, ::Raylib::Vector2 v3, ::Raylib::Color color) -> void
+
+  def self.draw_triangle_lines: (::Raylib::Vector2 v1, ::Raylib::Vector2 v2, ::Raylib::Vector2 v3, ::Raylib::Color color) -> void
+
+  def self.end_drawing: () -> void
+
+  def self.end_texture_mode: () -> void
+
+  def self.export_image: (::Raylib::Image image, String file_name) -> bool
+
+  def self.export_image_as_code: (::Raylib::Image image, String file_name) -> bool
+
+  def self.get_char_pressed: () -> Integer
+
+  def self.get_key_pressed: () -> Integer
+
+  def self.init_window: (Integer width, Integer height, String title) -> void
+
+  def self.is_image_ready: (::Raylib::Image image) -> bool
+
+  def self.is_key_down: (::Raylib::KeyboardKeys::Keys) -> bool
+
+  def self.is_key_pressed: (::Raylib::KeyboardKeys::Keys) -> bool
+
+  def self.is_key_pressed_repeat: (::Raylib::KeyboardKeys::Keys) -> bool
+
+  def self.is_key_released: (::Raylib::KeyboardKeys::Keys) -> bool
+
+  def self.is_key_up: (::Raylib::KeyboardKeys::Keys) -> bool
+
+  def self.is_render_texture_ready: (::Raylib::RenderTexture2D target) -> bool
+
+  def self.is_texture_ready: () -> bool
+
+  def self.is_window_focused: () -> bool
+
+  def self.is_window_fullscreen: () -> bool
+
+  def self.is_window_hidden: () -> bool
+
+  def self.is_window_maximized: () -> bool
+
+  def self.is_window_minimized: () -> bool
+
+  def self.is_window_ready: () -> bool
+
+  def self.is_window_resized: () -> bool
+
+  def self.is_window_state: (Integer flags) -> bool
+
+  def self.load_image: (String file_name) -> ::Raylib::Image
+
+  def self.load_image_from_texture: (::Raylib::Texture2D texture) -> ::Raylib::Image
+
+  def self.load_render_texture: (Integer width, Integer height) -> ::Raylib::RenderTexture2D
+
+  def self.load_texture: (String file_name) -> Texture2D
+
+  def self.load_texture_from_image: (::Raylib::Image image) -> Texture2D
+
+  def self.maximize_window: () -> void
+
+  def self.measure_text: (String text, Integer font_size) -> Integer
+
+  def self.minimize_window: () -> void
+
+  def self.restore_window: () -> void
+
+  def self.set_target_fps: (Integer fps) -> void
+
+  def self.set_trace_log_level: (::Raylib::TraceLogLevel log_level) -> void
+
+  def self.set_window_state: (Integer flags) -> void
+
+  def self.toggle_borderless_windowed: () -> void
+
+  def self.toggle_fullscreen: () -> void
+
+  def self.unload_image: (::Raylib::Image image) -> void
+
+  def self.unload_render_texture: (::Raylib::RenderTexture2D target) -> void
+
+  def self.unload_texture: (::Raylib::Texture2D) -> void
+
+  def self.window_should_close: () -> bool
+
+  TraceLogLevel: ::FFI::Enum
+
+  VERSION: ::String
+
+  module Accessable
+    def make_accessor: (*Symbol attrs) -> void
+  end
+
+  module Colors
+    BEIGE: ::Raylib::Color
+
+    BLACK: ::Raylib::Color
+
+    BLANK: ::Raylib::Color
+
+    BLUE: ::Raylib::Color
+
+    BROWN: ::Raylib::Color
+
+    DARKBLUE: ::Raylib::Color
+
+    DARKBROWN: ::Raylib::Color
+
+    DARKGRAY: ::Raylib::Color
+
+    DARKGREEN: ::Raylib::Color
+
+    DARKPURPLE: ::Raylib::Color
+
+    GOLD: ::Raylib::Color
+
+    GRAY: ::Raylib::Color
+
+    GREEN: ::Raylib::Color
+
+    LIGHTGRAY: ::Raylib::Color
+
+    LIME: ::Raylib::Color
+
+    MAGENTA: ::Raylib::Color
+
+    MAROON: ::Raylib::Color
+
+    ORANGE: ::Raylib::Color
+
+    PINK: ::Raylib::Color
+
+    PURPLE: ::Raylib::Color
+
+    RAYWHITE: ::Raylib::Color
+
+    RED: ::Raylib::Color
+
+    SKYBLUE: ::Raylib::Color
+
+    VIOLET: ::Raylib::Color
+
+    WHITE: ::Raylib::Color
+
+    YELLOW: ::Raylib::Color
+  end
+
+  module ConfigFlags
+    extend FFI::Library
+    def self.const_missing: (untyped sym) -> untyped
+    Flags: ::FFI::Enum
+  end
+
+  module Creatable[T]
+    def create: () { (T) -> void } -> T
+  end
+
+  module KeyboardKeys
+    extend FFI::Library
+
+    def self.const_missing: (untyped sym) -> untyped
+
+    Keys: ::FFI::Enum
+  end
 end

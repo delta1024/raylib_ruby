@@ -1,0 +1,295 @@
+module Raylib
+  class Color < ::FFI::Struct
+    extend Raylib::Creatable[Color]
+
+    extend Raylib::Accessable
+
+    def self.from: (Integer r, Integer g, Integer b, Integer a) -> Color
+                   | (Array[Integer] args) -> Color
+
+    def a: () -> Integer
+
+    def a=: (Integer val) -> void
+
+    def b: () -> Integer
+
+    def b=: (Integer val) -> void
+
+    def g: () -> Integer
+
+    def g=: (Integer val) -> void
+
+    def inspect: () -> String
+
+    def r: () -> Integer
+
+    def r=: (Integer val) -> void
+  end
+
+  class Image < ::FFI::Struct
+    extend Raylib::Creatable[Image]
+
+    extend Raylib::Accessable
+
+    def data: () -> FFI::Pointer
+
+    def data=: (FFI::Pointer val) -> void
+
+    def format: () -> Integer
+
+    def format=: (Integer val) -> void
+
+    def height: () -> Integer
+
+    def height=: (Integer val) -> void
+
+    def mipmaps: () -> Integer
+
+    def mipmaps=: (Integer val) -> void
+
+    def width: () -> Integer
+
+    def width=: (Integer val) -> void
+  end
+
+  class Matrix < ::FFI::Struct
+    extend Raylib::Creatable
+
+    extend Raylib::Accessable
+
+    def m0: () -> Float
+
+    def m0=: (Float val) -> Float
+
+    def m1: () -> Float
+
+    def m10: () -> Float
+
+    def m10=: (Float val) -> Float
+
+    def m11: () -> Float
+
+    def m11=: (Float val) -> Float
+
+    def m12: () -> Float
+
+    def m12=: (Float val) -> Float
+
+    def m13: () -> Float
+
+    def m13=: (Float val) -> Float
+
+    def m14: () -> Float
+
+    def m14=: (Float val) -> Float
+
+    def m15: () -> Float
+
+    def m15=: (Float val) -> Float
+
+    def m1=: (Float val) -> Float
+
+    def m2: () -> Float
+
+    def m2=: (Float val) -> Float
+
+    def m3: () -> Float
+
+    def m3=: (Float val) -> Float
+
+    def m4: () -> Float
+
+    def m4=: (Float val) -> Float
+
+    def m5: () -> Float
+
+    def m5=: (Float val) -> Float
+
+    def m6: () -> Float
+
+    def m6=: (Float val) -> Float
+
+    def m7: () -> Float
+
+    def m7=: (Float val) -> Float
+
+    def m8: () -> Float
+
+    def m8=: (Float val) -> Float
+
+    def m9: () -> Float
+
+    def m9=: (Float val) -> Float
+  end
+
+  class NPatchInfo < ::FFI::Struct
+    extend Raylib::Creatable[NPatchInfo]
+
+    extend Raylib::Accessable
+
+    def bottom: () -> Integer
+
+    def bottom=: (Integer val) -> void
+
+    def layout: () -> Integer
+
+    def layout=: (Integer val) -> void
+
+    def left: () -> Integer
+
+    def left=: (Integer val) -> void
+
+    def right: () -> Integer
+
+    def right=: (Integer val) -> void
+
+    def source: () -> Rectangle
+
+    def source=: (Rectangle val) -> void
+
+    def top: () -> Integer
+
+    def top=: (Integer val) -> void
+  end
+
+  class Rectangle < ::FFI::Struct
+    extend Raylib::Creatable[Rectangle]
+
+    extend Raylib::Accessable
+
+    def self.from: (Fload x, Float y, Float width, Float height) -> Rectangle
+                  | (Array[Float] vals) -> Rectangle
+
+    def height: () -> Float
+
+    def height=: (Float val) -> void
+
+    def inspect: () -> Float
+
+    def width: () -> Float
+
+    def width=: (Float val) -> void
+
+    def x: () -> Float
+
+    def x=: (Float val) -> void
+
+    def y: () -> Float
+
+    def y=: (Float val) -> void
+  end
+
+  class RenderTexture < ::FFI::Struct
+    extend Raylib::Creatable[RenderTexture]
+
+    extend Raylib::Accessable
+
+    def depth: () -> Texture
+
+    def depth=: (Texture val) -> void
+
+    def id: () -> Integer
+
+    def id=: (Integer val) -> void
+
+    def texture: () -> Texture
+
+    def texture=: (Texture val) -> void
+  end
+  class RenderTexture2D = RenderTexture
+  class Texture < ::FFI::Struct
+    extend Raylib::Creatable[Texture]
+
+    extend Raylib::Accessable
+
+    def format: () -> Integer
+
+    def format=: (Integer val) -> void
+
+    def height: () -> Integer
+
+    def height=: (Integer val) -> void
+
+    def id: () -> Integer
+
+    def id=: (Integer val) -> void
+
+    def mipmaps: () -> Integer
+
+    def mipmaps=: (Integer val) -> void
+
+    def width: () -> Integer
+
+    def width=: (Integer val) -> void
+  end
+  class Texture2D = Texture
+
+  class Vector2 < ::FFI::Struct
+    extend Raylib::Creatable[Vector2]
+
+    extend Raylib::Accessable
+
+    def self.from: (Float x, Float y) -> Vector2
+                  | (Array[Float] vals) -> Vector2
+
+    def inspect: () -> String
+
+    def x: () -> Float
+
+    def x=: (Float val) -> void
+
+    def y: () -> Float
+
+    def y=: (Float val) -> void
+  end
+
+  class Vector3 < ::FFI::Struct
+    extend Raylib::Creatable[Vector3]
+
+    extend Raylib::Accessable
+
+    def self.from: (Float x, Float y, Float z) -> Vector3
+                   | (Array[Float] vals) -> Vector3
+
+    def inspect: () -> String
+
+    def x: () -> Float
+
+    def x=: (Float val) -> void
+
+    def y: () -> Float
+
+    def y=: (Float val) -> void
+
+    def z: () -> Float
+
+    def z=: (Float val) -> void
+  end
+
+  class Vector4 < ::FFI::Struct
+    extend Raylib::Creatable[Vector4]
+
+    extend Raylib::Accessable
+
+    def self.from: (Float x, Float y, Float z, Float w) -> Vector4
+                  | (Array[Float] vals) -> Vector4
+
+    def inspect: () -> String
+
+    def w: () -> Float
+
+    def w=: (Float val) -> Float
+
+    def x: () -> Float
+
+    def x=: (Float val) -> Float
+
+    def y: () -> Float
+
+    def y=: (Float val) -> Float
+
+    def z: () -> Float
+
+    def z=: (Float val) -> Float
+  end
+end
